@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Single profile {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="card my-2 mx-2" style="width: 18rem;">
+            <img class="card-img-top" height="300px" width="250px" src="{{i.image.url}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <h5 class="card-title">{{i.email}}</h5>
+                <p class="card-text">address:{{i.address}}</p>
+                <p class="card-text">Birth_day{{i.Brith_day}}</p>
+                <p class="card-text">Gender:{{i.Gender}}</p>
+                <p class="card-text">phone_number:{{i.phone_number}}</p>
+                <p class="card-text">age:{{i.age}}</p>
+                <a href="{% url 'updateProfile' i.id%}" class="btn btn-primary">Update</a>
+                <a href="{% url 'delete' i.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
